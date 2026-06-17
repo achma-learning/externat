@@ -1,0 +1,6 @@
+# build scratch / caches
+_pdf_work/
+build/__pycache__/
+build/_old_modules.json
+*.pyc
+.DS_Store
