@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>externat · second brain des objectifs de stage</title>
+<meta name="description" content="Tous les objectifs des stages hospitaliers de la FMPM, par service. Recherche instantanée, suivi de validation et téléchargement PDF par module.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d6e60'/><text x='50' y='72' font-size='62' text-anchor='middle' fill='white' font-family='sans-serif'>✚</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Le <span class="grad">second brain</span> des objectifs de stage.</h1>
+    <p class="lead">Tous les objectifs des stages hospitaliers, rangés par service —
+      cherchez, cochez ce qui est validé, et téléchargez la fiche PDF de chaque module.</p>
+
+    <label class="searchbox" for="q">
+      <span id="searchIcon"></span>
+      <input id="q" type="search" autocomplete="off" placeholder="Rechercher un service ou un objectif (ex. « ECG », « ponction », « cardiologie »)…">
+      <kbd>/</kbd>
+    </label>
+
+    <div class="stats" id="stats"></div>
+    <div class="gprog" id="gprog"></div>
+  </section>
+
+  <div class="filters" id="groupFilters"></div>
+  <div class="filters" id="yearFilters"></div>
+
+  <div id="results"></div>
+</main>
+
+<footer class="foot-main">
+  <div class="wrap">
+    <span id="footNote"></span>
+    <span>Données : guides de stage FMPM · interface statique, fonctionne hors-ligne.</span>
+  </div>
+</footer>
+
+<script src="data/objectives.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
