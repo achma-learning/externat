@@ -7,14 +7,19 @@ objectifs des stages hospitaliers** de la Faculté de Médecine et de Pharmacie 
 Marrakech, rangés **par service**. Pensé façon *cheat-sheet* pour compresser
 l'apprentissage et garder une trace de ce qui est validé.
 
-> **44 services · 919 objectifs · 7 pôles** — recherche instantanée, suivi de
+> **44 services · 918 objectifs · 7 pôles** — recherche instantanée, suivi de
 > validation (coché = retenu) et **fiche PDF téléchargeable pour chaque module**.
 
 ## Ce que ça fait
 
 - 🔎 **Recherche instantanée** sur les services *et* le texte des objectifs
-  (« ECG », « ponction lombaire », « ictère »…). Raccourci : `/`.
+  (« ECG », « ponction lombaire », « ictère »…), avec **extraits surlignés**
+  directement sur les cartes. Raccourci : `/`.
 - 🧩 **Filtres** par pôle (Médecine, Chirurgie, Pédiatrie…) et par année.
+  L'état (recherche + filtres) est **inscrit dans l'URL** — une vue se partage
+  telle quelle.
+- ♿ **Accessible au clavier** : chaque objectif est une case à cocher
+  (Espace / Entrée), et chaque fiche a son propre champ de filtre.
 - ✅ **Suivi de validation** : cochez un objectif, la progression est gardée
   sur votre appareil (`localStorage`, aucun compte). Barre de progression par
   service et globale.
@@ -34,7 +39,7 @@ service.html?slug=…   Fiche d'un service (objectifs + checklist + PDF)
 guides.html           Guides complets, glossaire, barème
 assets/css/style.css  Thème (clair/sombre)
 assets/js/            store.js (données + thème + progression) · home/service/guides.js
-data/objectives.json  Données structurées (44 services, 919 objectifs)
+data/objectives.json  Données structurées (44 services, 918 objectifs)
 data/objectives.js    Même contenu, injecté via window.OBJECTIVES (offline)
 pdfs/services/*.pdf    Une fiche par service + « tous-les-objectifs.pdf »
 pdfs/full/*.pdf        Les deux guides d'origine (référentiel 2022 + checklist détaillée)

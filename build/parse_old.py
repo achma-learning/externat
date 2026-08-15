@@ -23,8 +23,30 @@ FIXES = {
     "EËfectuer": "Effectuer",
     "EÌfectuer": "Effectuer",
     "à risqué": "à risque",
+    "du risqué": "du risque",
+    "risqué cardio": "risque cardio",
     "antéhypophysaire": "antéhypophysaire",
     "intracrâanienne": "intracrânienne",
+    "contres indications": "contre-indications",
+    "contre indications": "contre-indications",
+    "Reconnaiître": "Reconnaître",
+    "les lesions": "les lésions",
+}
+
+# A handful of cells in the source .docx store their text runs out of order,
+# producing scrambled objectives. Every word is present, so these are faithful
+# re-orderings keyed by the exact (post-clean) garbled string.
+CORRECTIONS = {
+    "sthétacoustiques Décrire les caractéristiques d’un soufflé cardiaque retrouvé chez un patient porteur d’une insuffisance aortique.":
+        "Décrire les caractéristiques stéthacoustiques d’un souffle cardiaque retrouvé chez un patient porteur d’une insuffisance aortique.",
+    "cardiaque chez Décrire un l’aspect patient sur une des porteur radiographie arcs d’une de la silhouette valvulopathie thoracique de mitrale au stade chirurgicale":
+        "Décrire l’aspect des arcs de la silhouette cardiaque sur une radiographie thoracique chez un patient porteur d’une valvulopathie mitrale au stade chirurgical.",
+    "chez Reconnaître un malade les signes en détresse de gravité respiratoire d’une insuffisance en réanimation respiratoire aiguë":
+        "Reconnaître les signes de gravité d’une insuffisance respiratoire aiguë chez un malade en réanimation.",
+    "en Réaliser réanimation un bilan hydrique entrées/sorties des 24H chez un patient":
+        "Réaliser en réanimation un bilan hydrique (entrées/sorties) des 24H chez un patient.",
+    "élémentaire Reconnaître d’un sur la malade gazométrie en réanimation artérielle un désordre acido-basique":
+        "Reconnaître un désordre acido-basique élémentaire sur la gazométrie artérielle chez un malade en réanimation.",
 }
 
 
@@ -42,6 +64,9 @@ def clean(text: str) -> str:
     t = re.sub(r"\s+", " ", t).strip()
     # trailing orphan letters like "norma" -> leave; fix common ones
     t = re.sub(r"\bnorma\b", "normal", t)
+    # drop a leaked sub-header prefix and stray trailing punctuation
+    t = re.sub(r"^S[ée]ances d[’']ARC\s*:\s*", "", t)
+    t = re.sub(r"[ ,;]+$", "", t)
     return t
 
 
@@ -111,7 +136,12 @@ NOISE = {"arc", "apc", "ecos", "ecosl", "snaps", "simulation", "jeux de role",
 
 def is_noise(text):
     n = strip_accents(text).lower().strip(" .:-")
-    return n in NOISE or len(n) < 6
+    if n in NOISE or len(n) < 6:
+        return True
+    # a single all-caps word (e.g. "GESTES") is a sub-header, not an objective
+    if text.strip().isupper() and " " not in text.strip():
+        return True
+    return False
 
 
 def split_objective(cells):
@@ -331,6 +361,7 @@ def parse():
                 continue
             rubrique, obj = split_objective(cells)
             obj = clean(obj)
+            obj = CORRECTIONS.get(obj, obj)
             if not obj or obj.lower() in HEADER_WORDS or is_noise(obj):
                 continue
             if rubrique:

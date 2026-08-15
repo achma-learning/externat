@@ -119,9 +119,38 @@
     $("#themeBtn").textContent = t === "dark" ? "☀" : "☾";
   }
 
+  // ---- text helpers (search highlight) ----
+  const esc = (s) => (s || "").replace(/[&<>"]/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function highlight(text, terms) {
+    const safe = esc(text);
+    const words = (terms || []).filter(Boolean).map((t) =>
+      t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).filter((t) => t.length > 1);
+    if (!words.length) return safe;
+    // match on an accent-insensitive copy, map spans back onto the original
+    const bare = norm(text);
+    const ranges = [];
+    words.forEach((w) => {
+      const nw = norm(w); let from = 0, i;
+      while ((i = bare.indexOf(nw, from)) !== -1) { ranges.push([i, i + nw.length]); from = i + nw.length; }
+    });
+    if (!ranges.length) return safe;
+    ranges.sort((a, b) => a[0] - b[0]);
+    const merged = [ranges[0]];
+    for (let k = 1; k < ranges.length; k++) {
+      const last = merged[merged.length - 1];
+      if (ranges[k][0] <= last[1]) last[1] = Math.max(last[1], ranges[k][1]);
+      else merged.push(ranges[k]);
+    }
+    let out = "", pos = 0;
+    merged.forEach(([a, b]) => { out += esc(text.slice(pos, a)) + "<mark>" + esc(text.slice(a, b)) + "</mark>"; pos = b; });
+    out += esc(text.slice(pos));
+    return out;
+  }
+
   initTheme();
   window.Externat = {
-    DATA, h, $, $$, param, flatObjectives, serviceTotal, norm,
+    DATA, h, $, $$, param, flatObjectives, serviceTotal, norm, esc, highlight,
     Progress, toast, mountTopbar, toggleTheme,
     svgSearch: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
   };

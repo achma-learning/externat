@@ -4,10 +4,10 @@
     "tagline": "Le second brain des objectifs de stage hospitalier",
     "faculty": "Faculté de Médecine et de Pharmacie de Marrakech",
     "university": "Université Cadi Ayyad",
-    "generated": "2026-06-17",
+    "generated": "2026-08-15",
     "counts": {
       "services": 44,
-      "objectives": 919,
+      "objectives": 918,
       "groups": 7
     },
     "groupOrder": [
@@ -155,7 +155,7 @@
             "Apprécier les pouls périphériques",
             "Reconnaître et situer les varices des membres inférieurs",
             "Examiner le corps thyroïde",
-            "Faire une démarche diagnostique devant une masse abdominale,",
+            "Faire une démarche diagnostique devant une masse abdominale",
             "Faire une démarche diagnostique devant une hémorragie digestive.",
             "Réaliser l’incision et le drainage d’un abcès chaud superficiel des parties molles.",
             "Pratiquer une anesthésie locale",
@@ -264,7 +264,7 @@
         {
           "label": "3ème année",
           "objectives": [
-            "Relever sur la base des données anamnestiques les facteurs du risqué cardio-vasculaire",
+            "Relever sur la base des données anamnestiques les facteurs du risque cardio-vasculaire",
             "Relever sur la base des données anamnestiques et physiques les signes d’hypertension artérielle systémique",
             "Relever à partir de l’examen physique les signes périphériques de l’insuffisance cardiaque droite chez un patient se présentant pour des œdèmes des membres inferieurs",
             "Identifier les signes physiques de l’insuffisance cardiaque gauche chez un patient se présentant pour une dyspnée.",
@@ -277,7 +277,7 @@
           "objectives": [
             "Décrire les caractéristiques sthétacoustiques d’un souffle cardiaque retrouvé chez un patient porteur d’une insuffisance mitrale.",
             "Décrire les caractéristiques sthétacoustiques d’un roulement cardiaque retrouvé chez un patient Porteur d’un rétrécissement mitral.",
-            "sthétacoustiques Décrire les caractéristiques d’un soufflé cardiaque retrouvé chez un patient porteur d’une insuffisance aortique.",
+            "Décrire les caractéristiques stéthacoustiques d’un souffle cardiaque retrouvé chez un patient porteur d’une insuffisance aortique.",
             "Décrire les caractéristiques sthétacoustiques d’un soufflé cardiaque retrouvé chez un patient porteur d’un rétrécissement aortique."
           ]
         },
@@ -356,7 +356,7 @@
         {
           "label": null,
           "objectives": [
-            "Identifier les lesions élémentaires en dermatologie",
+            "Identifier les lésions élémentaires en dermatologie",
             "Interpréter une sérologie syphilitique"
           ]
         },
@@ -842,14 +842,14 @@
         {
           "label": null,
           "objectives": [
-            "Relever par l’interrogatoire les contres indications chez un patient adressé pour une exploration utilisant les rayons X.",
-            "Relever par l’interrogatoire les contres indications chez un patient adressé pour une IRM."
+            "Relever par l’interrogatoire les contre-indications chez un patient adressé pour une exploration utilisant les rayons X.",
+            "Relever par l’interrogatoire les contre-indications chez un patient adressé pour une IRM."
           ]
         },
         {
           "label": "Imagerie thoracique",
           "objectives": [
-            "Déceler par l’interrogatoire les contres indications avant toute injection de produit de contraste.",
+            "Déceler par l’interrogatoire les contre-indications avant toute injection de produit de contraste.",
             "Interpréter une radiographie pulmonaire normale de face et de profil chez l’adulte.",
             "Reconnaitre les signes sémiologiques d’un syndrome alvéolaire sur la radiographie pulmonaire de face.",
             "Reconnaître les signes sémiologiques d’un syndrome interstitiel sur une radiographie pulmonaire de face.",
@@ -882,7 +882,7 @@
         {
           "label": "Neuroradiologie",
           "objectives": [
-            "Reconnaiître les différentes structures identifiables sur un scanner cérébral normal.",
+            "Reconnaître les différentes structures identifiables sur un scanner cérébral normal.",
             "Reconnaitre un AVCI et AVCH sur un scanner cérébral.",
             "Déceler sur un scanner les différentes lésions post traumatiques de l’encéphale.",
             "Interpréter une radiographie normale du rachis de l’adulte.",
@@ -1030,7 +1030,7 @@
             "Identifier les principales artères des membres inférieurs",
             "Reconnaitre une occlusion sur une artériographie",
             "Reconnaitre une sténose artérielle sur une artériographie",
-            "cardiaque chez Décrire un l’aspect patient sur une des porteur radiographie arcs d’une de la silhouette valvulopathie thoracique de mitrale au stade chirurgicale",
+            "Décrire l’aspect des arcs de la silhouette cardiaque sur une radiographie thoracique chez un patient porteur d’une valvulopathie mitrale au stade chirurgical.",
             "Décrire l’aspect des arcs de la silhouette cardiaque sur et la vascularisation pulmonaire de chez un patient ayant une tétralogie de Fallot",
             "Reconnaitre Les fils d’aciers sur ; la les radiographie valves mécaniques du thorax chez patient opéré pour remplacement valvulaire mitral",
             "Interpréter une radiographie du thorax d’un patient porteur d’un shunt gauche droit"
@@ -1075,7 +1075,7 @@
       "group": "Chirurgie",
       "section": "Les objectifs spedifiques dans les services de chirurgie",
       "years": [],
-      "count": 21,
+      "count": 20,
       "pdf": "pdfs/services/chirurgie-plastique.pdf",
       "groups": [
         {
@@ -1100,7 +1100,6 @@
         {
           "label": "Objectifs pratiques du stage de chirurgie réparatrice et plastique",
           "objectives": [
-            "GESTES",
             "Réfection de pansement d’un petit brûlé",
             "Réfection de pansement d’un patient opéré",
             "Réaliser des sutures cutanées",
@@ -1493,7 +1492,7 @@
             "Reconnaître les éléments en faveur d’un traumatisme rénal chez un poly-traumatisé admis aux urgences",
             "Reconnaître sur un cliché d’arbre urinaire sans préparation une opacité de tonalité calcique orientant vers un calcul urinaire chez un patient présentant une crise colique nephretique",
             "Réaliser un prélèvement d’urine pour examen cytobactériologique chez une ou un patient hospitalisé",
-            "Interpréter un examen cytobactériologique des urines chez un patient présentant une infection urinaire ;",
+            "Interpréter un examen cytobactériologique des urines chez un patient présentant une infection urinaire",
             "ARC : Troubles mictionnels chez le sujet âgé",
             "ARC : Hématurie macroscopique",
             "ARC : Lombalgies",
@@ -1709,16 +1708,16 @@
             "Pratiquer une ventilation à l’aide d’un ballon auto-remplisseur chez un malade en réanimation",
             "Interpréter une radiographie thoracique faite au lit en réanimation",
             "Assister à une intubation orotrachéale chez un patient en détresse respiratoire",
-            "chez Reconnaître un malade les signes en détresse de gravité respiratoire d’une insuffisance en réanimation respiratoire aiguë"
+            "Reconnaître les signes de gravité d’une insuffisance respiratoire aiguë chez un malade en réanimation."
           ]
         },
         {
           "label": "Thèmes métaboliques :",
           "objectives": [
-            "en Réaliser réanimation un bilan hydrique entrées/sorties des 24H chez un patient",
+            "Réaliser en réanimation un bilan hydrique (entrées/sorties) des 24H chez un patient.",
             "Placer une sonde vésicale chez un patient en réanimation",
             "Placer une sonde gastrique chez un malade inconscient en réanimation",
-            "élémentaire Reconnaître d’un sur la malade gazométrie en réanimation artérielle un désordre acido-basique",
+            "Reconnaître un désordre acido-basique élémentaire sur la gazométrie artérielle chez un malade en réanimation.",
             "Réaliser la glycémie capillaire chez un patient en réanimation",
             "Conduire une insulinothérapie chez un patient en réanimation"
           ]
@@ -1771,7 +1770,7 @@
             "Suivre le circuit d’une pièce opératoire en Anatomie pathologique.",
             "Interpréter un compte rendu anatomopathologique.",
             "Réaliser un Frottis cervico-vaginal dans le cadre du dépistage du cancer du col utérin.",
-            "Séances d’ARC: Adénopathie cervicale chez un sujet jeune Nodule mammaire. FCV anormal Masse accouchée par le col utérin.."
+            "Adénopathie cervicale chez un sujet jeune Nodule mammaire. FCV anormal Masse accouchée par le col utérin.."
           ]
         }
       ]
