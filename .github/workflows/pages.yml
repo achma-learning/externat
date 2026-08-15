@@ -1,6 +1,7 @@
 name: Deploy to GitHub Pages
 
-# Publishes the static site (repo root) to GitHub Pages.
+# Regenerates the dataset + per-service PDFs from the source guide, then
+# publishes the static site (repo root) to GitHub Pages.
 # Enable in: Settings → Pages → "Build and deployment" → Source: GitHub Actions.
 
 on:
@@ -18,16 +19,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-dejavu-core
+          pip install --quiet python-docx fpdf2
+      - name: Build data + per-service PDFs
+        run: cd build && python build.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
       - id: deployment
         uses: actions/deploy-pages@v4
